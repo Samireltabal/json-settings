@@ -1,0 +1,41 @@
+{
+    "name": "samireltabal/json-settings",
+    "description": "Json Settings For Laravel",
+    "type": "library",
+    "require": {
+        "laravel/framework": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Samireltabal\\JsonSettings\\": "src/",
+            "Samireltabal\\JsonSettings\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "analyse": "vendor/bin/phpstan analyse ./src",
+        "format": "vendor/bin/pint"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Samireltabal\\JsonSettings\\SettingsServiceProvider"
+            ]
+        },
+        "aliases": {
+            "Settings": "Samireltabal\\JsonSettings\\Facades\\Settings"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samir M. Eltabal",
+            "email": "samir.m.eltabal@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^7.19",
+        "phpunit/phpunit": "^9.5",
+        "laravel/pint": "^1.4",
+        "nunomaduro/larastan": "^2.4"
+    }
+}
