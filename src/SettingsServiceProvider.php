@@ -14,7 +14,7 @@ class SettingsServiceProvider extends ServiceProvider
         ], 'config');
         $configFileName = config('SESettings.default_app');
         if (config('SESettings.enabled')) {
-            $this->app->bind('Settings', function () use ($configFileName) {
+            $this->app->singleton('Settings', function () use ($configFileName) {
                 return new SettingsClass($configFileName);
             });
         }
